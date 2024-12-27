@@ -27,12 +27,8 @@ async function printScreen() {
     const page = await browser.newPage();
 
     // Acessa a URL desejada
-    await page.goto("https://www.windy.com/pt/-Chuva-trov%C3%A3o-rain?rain,-22.451,-42.681,8", { waitUntil: 'networkidle2' });
-    await page.waitForFunction(() => document.querySelector('css-selector')?.innerText.length > 0, { timeout: 10000 });
-    await page.screenshot({ path: 'screenshot.png' });
-    
-
-    console.log('Abriu o navegador e acessou a Netfli');
+    await page.goto('https://www.windy.com/pt/-Chuva-trov%C3%A3o-rain?rain,2024122921,-22.451,-42.681,8');
+    console.log('Abriu o navegador e acessou a Netflix');
 
     // Define o caminho para salvar a imagem
     const timestamp = Date.now();
@@ -69,5 +65,5 @@ app.get('/', async (req, res) => {
 
 // Inicia o servidor
 app.listen(PORT, () => {
-  console.log(`Servidor rodando em Porta ${PORT}`);
+  console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
