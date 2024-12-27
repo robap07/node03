@@ -28,6 +28,9 @@ async function printScreen() {
 
     // Acessa a URL desejada
     await page.goto('https://previsao.inmet.gov.br/3101508', { timeout: 30000 });
+    await page.waitForTimeout(5000); // Espera 5 segundos
+    await page.screenshot({ path: filePath });
+
     console.log('Abriu o navegador e acessou a Netfli');
 
     // Define o caminho para salvar a imagem
