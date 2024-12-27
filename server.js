@@ -26,6 +26,13 @@ async function printScreen() {
 
     const page = await browser.newPage();
 
+    // Alterar o tamanho da tela
+  await page.setViewport({
+    width: 1800,
+    height: 1200,
+    deviceScaleFactor: 1,
+  })
+
     // Acessa a URL desejada
     await page.goto('https://previsao.inmet.gov.br/3101508');
     
@@ -49,12 +56,7 @@ async function printScreen() {
     await page.screenshot({ path: filePath });
     console.log(`Screenshot salvo em: ${filePath}`);
 
-    // Alterar o tamanho da tela
-  await page.setViewport({
-    width: 1800,
-    height: 1200,
-    deviceScaleFactor: 1,
-  })
+  
 
     // Fecha o navegador
     await browser.close();
