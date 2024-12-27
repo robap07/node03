@@ -27,7 +27,7 @@ async function printScreen() {
     const page = await browser.newPage();
 
     // Acessa a URL desejada
-    await page.goto('https://previsao.inmet.gov.br/3101508', { waitUntil: 'domcontentloaded' });
+  await page.goto("https://previsao.inmet.gov.br/3101508", { waitUntil: 'domcontentloaded' });
     await page.waitForFunction(() => document.querySelector('css-selector')?.innerText.length > 0, { timeout: 10000 });
     await page.screenshot({ path: 'screenshot.png' });
     
