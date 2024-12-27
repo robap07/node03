@@ -26,15 +26,19 @@ async function printScreen() {
 
     const page = await browser.newPage();
 
-// Acessa a URL desejada
-await page.goto('https://www.windy.com/pt/-Chuva-trov%C3%A3o-rain?rain,2024122921,-22.451,-42.681,8', {
-  waitUntil: 'networkidle2', // Aguarda até que a rede esteja ociosa
-  timeout: 60000, // Tempo máximo para a página carregar (60 segundos)
-});
-console.log('Aguardando o carregamento da página...');
-await page.waitForTimeout(10000); // Aguarda 10 segundos adicionais
-console.log('Abriu o navegador e acessou o site.');
-
+    // Acessa a URL desejada
+    await page.goto('https://www.windy.com/pt/-Chuva-trov%C3%A3o-rain?rain,2024122921,-22.451,-42.681,8');
+    
+    function delay(time) {
+      return new Promise(function (resolve) {
+        setTimeout(resolve, time)
+      })
+    }
+    
+    // Esperar por 10 segundos
+    await delay(10000)
+    
+    console.log('Abriu o navegador e acessou a Netflix');
 
     // Define o caminho para salvar a imagem
     const timestamp = Date.now();
