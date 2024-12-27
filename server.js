@@ -49,6 +49,13 @@ async function printScreen() {
     await page.screenshot({ path: filePath });
     console.log(`Screenshot salvo em: ${filePath}`);
 
+    // Alterar o tamanho da tela
+  await page.setViewport({
+    width: 1800,
+    height: 1200,
+    deviceScaleFactor: 1,
+  })
+
     // Fecha o navegador
     await browser.close();
 
