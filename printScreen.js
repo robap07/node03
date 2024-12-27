@@ -7,7 +7,7 @@ const puppeteer = require('puppeteer');
 
   // Acessa a URL
   console.log('Abrindo o navegador e acessando a página...');
-  await page.goto('https://previsao.inmet.gov.br/3101508', { waitUntil: 'networkidle2' });
+  await page.goto('https://www.windy.com/pt/-Chuva-trov%C3%A3o-rain?rain,-22.451,-42.681,8', { waitUntil: 'networkidle2' });
 
   // Aguarda o conteúdo renderizar (ajuste o seletor conforme necessário)
   console.log('Aguardando o conteúdo principal...');
