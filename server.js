@@ -27,15 +27,7 @@ async function printScreen() {
     const page = await browser.newPage();
 
     // Acessa a URL desejada
-// Acessa a URL desejada
-await page.goto(
-  'https://www.windy.com/pt/-Chuva-trov%C3%A3o-rain?rain,2024122921,-22.451,-42.681,8',
-  { waitUntil: 'networkidle2', timeout: 60000 } // Aguarda até que a rede esteja inativa ou atinge o timeout
-);
-
-// Adiciona um tempo extra para garantir que a página carregue completamente
-await page.waitForTimeout(10000); // Espera 10 segundos adicionais
-
+    await page.goto('https://www.windy.com/pt/-Chuva-trov%C3%A3o-rain?rain,2024122921,-22.451,-42.681,8');
     console.log('Abriu o navegador e acessou a Netflix');
 
     // Define o caminho para salvar a imagem
